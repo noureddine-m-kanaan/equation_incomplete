@@ -10,6 +10,7 @@ import android.widget.Toast;
 
 import fr.nmk.equation_incomplete.model.Equation;
 import fr.nmk.equation_incomplete.model.Level;
+import fr.nmk.equation_incomplete.model.Position;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -32,11 +33,18 @@ public class MainActivity extends AppCompatActivity {
     private Button btnC;
     private Button btnPass;
 
+    private String nombreSaisie = "...";
+
+    private Level level;
+    private Equation equation;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        level = Level.easy;
+        equation = new Equation(level);
 
         init_objetcs();
         handle_button_click();
@@ -46,12 +54,38 @@ public class MainActivity extends AppCompatActivity {
 
 
     private void click_listener(String str) {
-        Toast.makeText(MainActivity.this.getApplicationContext(), "J'ai cliqué sur " + str, Toast.LENGTH_SHORT).show();
+        if (str.equals("Pass")) {
+
+        }else {
+            if (str.equals("C") && !nombreSaisie.equals("...")) {
+                nombreSaisie = nombreSaisie.substring(0, nombreSaisie.length()-1);
+                if (nombreSaisie.equals("")) {
+                    nombreSaisie = "...";
+                }
+            }else if (!str.equals("C") && nombreSaisie.equals("...")) {
+                nombreSaisie = str;
+            }else if (!str.equals("C") && !nombreSaisie.equals("...")) {
+                nombreSaisie += str;
+            }
+        }
+
+        if (equation.getPositionToHide().equals(Position.left)) {
+            txtA.setText(nombreSaisie);
+        }else if (equation.getPositionToHide().equals(Position.right)) {
+            txtB.setText(nombreSaisie);
+        }else if (equation.getPositionToHide().equals(Position.result)) {
+            txtC.setText(nombreSaisie);
+        }
+
+        if (!nombreSaisie.equals("...")) {
+            boolean correct = equation.verifyValue(Integer.parseInt(nombreSaisie));
+            if (correct) {
+                Toast.makeText(MainActivity.this.getApplicationContext(), "Bravooo le nombre correcte est " + nombreSaisie, Toast.LENGTH_SHORT).show();
+            }
+        }
+
     }
     private void initializeView() {
-        Level level = Level.easy;
-        Equation equation = new Equation(level);
-
         txtA.setText(equation.getAStr());
         txtOperation.setText(equation.getOperationStr());
         txtB.setText(equation.getBStr());
