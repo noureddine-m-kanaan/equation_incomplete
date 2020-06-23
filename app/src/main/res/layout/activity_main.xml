@@ -26,7 +26,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        android:layout_marginTop="15dp"
+        android:layout_marginTop="50dp"
         android:layout_marginLeft="15dp"
         android:layout_marginRight="15dp"
         app:layout_constraintLeft_toLeftOf="parent"
@@ -89,103 +89,118 @@
         android:id="@+id/btnTable"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="15dp"
         android:layout_marginLeft="15dp"
+        android:layout_marginTop="50dp"
         android:layout_marginRight="15dp"
+        android:background="#ffffff"
+        android:shrinkColumns="*"
+        android:stretchColumns="*"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/horizontalLinearLayout">
 
         <TableRow
             android:layout_width="match_parent"
-            android:layout_height="match_parent" >
+            android:layout_height="match_parent">
 
             <Button
                 android:id="@+id/btn1"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="1" />
+                android:layout_width="@dimen/btnsize"
+                android:layout_height="@dimen/btnsize"
+                android:text="1"
+                android:textSize="@dimen/btntextsize" />
 
             <Button
                 android:id="@+id/btn2"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="2" />
+                android:layout_width="@dimen/btnsize"
+                android:layout_height="@dimen/btnsize"
+                android:text="2"
+                android:textSize="@dimen/btntextsize" />
 
             <Button
                 android:id="@+id/btn3"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="3" />
+                android:layout_width="@dimen/btnsize"
+                android:layout_height="@dimen/btnsize"
+                android:text="3"
+                android:textSize="@dimen/btntextsize" />
         </TableRow>
 
         <TableRow
             android:layout_width="match_parent"
-            android:layout_height="match_parent" >
+            android:layout_height="match_parent">
 
             <Button
                 android:id="@+id/btn4"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="4" />
+                android:layout_width="@dimen/btnsize"
+                android:layout_height="@dimen/btnsize"
+                android:text="4"
+                android:textSize="@dimen/btntextsize" />
 
             <Button
                 android:id="@+id/btn5"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="5" />
+                android:layout_width="@dimen/btnsize"
+                android:layout_height="@dimen/btnsize"
+                android:text="5"
+                android:textSize="@dimen/btntextsize" />
 
             <Button
                 android:id="@+id/btn6"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="6" />
+                android:layout_width="@dimen/btnsize"
+                android:layout_height="@dimen/btnsize"
+                android:text="6"
+                android:textSize="@dimen/btntextsize" />
         </TableRow>
 
         <TableRow
             android:layout_width="match_parent"
-            android:layout_height="match_parent" >
+            android:layout_height="match_parent">
 
             <Button
                 android:id="@+id/btn7"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="7" />
+                android:layout_width="@dimen/btnsize"
+                android:layout_height="@dimen/btnsize"
+                android:text="7"
+                android:textSize="@dimen/btntextsize" />
 
             <Button
                 android:id="@+id/btn8"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="8" />
+                android:layout_width="@dimen/btnsize"
+                android:layout_height="@dimen/btnsize"
+                android:text="8"
+                android:textSize="@dimen/btntextsize" />
 
             <Button
                 android:id="@+id/btn9"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="9" />
+                android:layout_width="@dimen/btnsize"
+                android:layout_height="@dimen/btnsize"
+                android:text="9"
+                android:textSize="@dimen/btntextsize" />
         </TableRow>
 
         <TableRow
             android:layout_width="match_parent"
-            android:layout_height="match_parent" >
+            android:layout_height="match_parent">
 
             <Button
                 android:id="@+id/btnPasse"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Passe" />
+                android:layout_width="@dimen/btnsize"
+                android:layout_height="@dimen/btnsize"
+                android:text="Passe"
+                android:textSize="@dimen/btntextsize" />
 
             <Button
                 android:id="@+id/btn0"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="0" />
+                android:layout_width="@dimen/btnsize"
+                android:layout_height="@dimen/btnsize"
+                android:text="0"
+                android:textSize="@dimen/btntextsize" />
 
             <Button
                 android:id="@+id/btnClear"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="C" />
+                android:layout_width="@dimen/btnsize"
+                android:layout_height="@dimen/btnsize"
+                android:text="C"
+                android:textSize="@dimen/btntextsize" />
         </TableRow>
     </TableLayout>
 
