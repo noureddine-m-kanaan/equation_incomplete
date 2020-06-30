@@ -23,7 +23,6 @@ public class Equation {
 
 		// random position to hide (a, b or c)
 		this.positionToHide = Position.getRandomPosition();
-
 	}
 
 	private void compute_result() {
@@ -120,6 +119,28 @@ public class Equation {
 		}
 		default:
 			throw new IllegalArgumentException("Unexpected value: " + positionToHide);
+		}
+	}
+
+	public int getTheCorrectAnswer() {
+		switch (positionToHide) {
+			case left: {
+				if (operation.equals(Operation.multiplication) && b == 0) {
+					return -1;
+				}
+				return a;
+			}
+			case right: {
+				if (operation.equals(Operation.multiplication) && a == 0) {
+					return -1;
+				}
+				return b;
+			}
+			case result: {
+				return c;
+			}
+			default:
+				throw new IllegalArgumentException("Unexpected value: " + positionToHide);
 		}
 	}
 
