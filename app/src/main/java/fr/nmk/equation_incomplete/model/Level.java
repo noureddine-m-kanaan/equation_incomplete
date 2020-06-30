@@ -13,4 +13,13 @@ public enum Level {
 	public int getFactor() {
 		return factor;
 	}
+
+	public static Level getLevel(String level) {
+		switch (level) {
+			case "easy": return easy;
+			case "medium": return medium;
+			case "hard": return hard;
+			default: return easy;
+		}
+	}
 }

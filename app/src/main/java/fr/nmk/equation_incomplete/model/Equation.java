@@ -63,8 +63,13 @@ public class Equation {
 	}
 
 	private void init_a_and_b() {
-		a = (int) (Math.random() * this.level.getFactor());
-		b = (int) (Math.random() * this.level.getFactor());
+		if (operation.equals(Operation.divide) || operation.equals(Operation.multiplication)) {
+			a = (int) (Math.random() * (this.level.getFactor()/2));
+			b = (int) (Math.random() * (this.level.getFactor()/2));
+		}else {
+			a = (int) (Math.random() * this.level.getFactor());
+			b = (int) (Math.random() * this.level.getFactor());
+		}
 	}
 
 	@Override

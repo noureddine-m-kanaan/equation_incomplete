@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.animation.ArgbEvaluator;
 import android.animation.ObjectAnimator;
+import android.content.Intent;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.os.Handler;
@@ -60,7 +61,15 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        level = Level.easy;
+        // Get the Intent that started this activity and extract the string
+        Intent intent = getIntent();
+        // String message = intent.getStringExtra("level");
+        // level = Level.getLevel(intent.getStringExtra("level"));
+        level = (Level) intent.getSerializableExtra("level");
+
+        setTitle(getTitle() + " ("+ level + ")");
+
+        // level = Level.easy;
         equation = new Equation(level);
         this.currentScore = 0;
         this.expectedScore = 0;
@@ -73,14 +82,14 @@ public class MainActivity extends AppCompatActivity {
     private void win() {
         // informer l'utilisateur qu'il a gagné
         // showMsg("Bravooo le nombre correcte est " + nombreSaisie);
-        showAnimationCorrectAnswer();
+        showAnimationCorrectAnswer(false);
         this.currentScore++;
 
         // après 1.5 secondes, il faut changer l'équation
         changerEquation();
     }
 
-    private void showAnimationCorrectAnswer() {
+    private void showAnimationCorrectAnswer(boolean isPass) {
         TextView txt = null;
         switch (equation.getPositionToHide()) {
             case left:
@@ -94,7 +103,10 @@ public class MainActivity extends AppCompatActivity {
                 break;
         }
         Animation myFadeInAnimation = AnimationUtils.loadAnimation(getApplicationContext(), R.anim.fadein);
-        txt.setTextColor(correctTextColor);
+        // Ne pas changer la couleur en bleu si l'utilisateur a cliqué sur passe
+        if (!isPass) {
+            txt.setTextColor(correctTextColor);
+        }
         txt.startAnimation(myFadeInAnimation);
     }
 
@@ -132,7 +144,7 @@ public class MainActivity extends AppCompatActivity {
         int correctAsnwer = equation.getTheCorrectAnswer();
         if (correctAsnwer != -1) {
             // showMsg("The correct asnwer is " + correctAsnwer);
-            showAnimationCorrectAnswer();
+            showAnimationCorrectAnswer(true);
             nombreSaisie = ""+ correctAsnwer;
             update_text_views(nombreSaisie);
         }else {
