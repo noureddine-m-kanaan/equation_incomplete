@@ -63,13 +63,8 @@ public class Equation {
 	}
 
 	private void init_a_and_b() {
-		if (operation.equals(Operation.divide) || operation.equals(Operation.multiplication)) {
-			a = (int) (Math.random() * (this.level.getFactor()/2));
-			b = (int) (Math.random() * (this.level.getFactor()/2));
-		}else {
-			a = (int) (Math.random() * this.level.getFactor());
-			b = (int) (Math.random() * this.level.getFactor());
-		}
+		a = (int) (Math.random() * this.level.getFactor());
+		b = (int) (Math.random() * this.level.getFactor());
 	}
 
 	@Override
@@ -114,7 +109,7 @@ public class Equation {
 			return a == value;
 		}
 		case right: {
-			if (operation.equals(Operation.multiplication) && a == 0) {
+			if ((operation.equals(Operation.multiplication) || operation.equals(Operation.divide)) && a == 0) {
 				return true;
 			}
 			return b == value;

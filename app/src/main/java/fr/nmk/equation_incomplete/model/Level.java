@@ -2,7 +2,7 @@ package fr.nmk.equation_incomplete.model;
 
 public enum Level {
 
-	easy(10), medium(50), hard(100);
+	easy(10), medium(20), hard(50);
 
 	private int factor;
 

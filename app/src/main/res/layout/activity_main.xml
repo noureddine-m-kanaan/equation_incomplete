@@ -4,33 +4,52 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#041F60"
     tools:context=".MainActivity">
-
 
 
     <TextView
         android:id="@+id/txtView_score"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:fontFamily="sans-serif"
-        android:text="Score : 10/15"
-        android:textSize="30sp"
-        android:gravity="center"
-        android:layout_marginTop="15dp"
-        android:layout_marginLeft="15dp"
+        android:layout_width="222dp"
+        android:layout_height="35dp"
+        android:layout_marginStart="88dp"
+        android:layout_marginLeft="88dp"
+        android:layout_marginTop="60dp"
         android:layout_marginRight="15dp"
+        android:fontFamily="sans-serif"
+        android:gravity="center_horizontal"
+        android:text="0"
+        android:textColor="#E1C340"
+        android:textSize="30sp"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent"/>
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/txtView_timer"
+        android:layout_width="221dp"
+        android:layout_height="37dp"
+        android:layout_marginTop="24dp"
+        android:layout_marginRight="15dp"
+        android:fontFamily="sans-serif"
+        android:gravity="center_horizontal"
+        android:text="1:00"
+        android:textColor="#E1C340"
+        android:textSize="30sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <LinearLayout
         android:id="@+id/horizontalLinearLayout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:layout_marginTop="50dp"
         android:layout_marginLeft="15dp"
+        android:layout_marginTop="50dp"
         android:layout_marginRight="15dp"
+        android:orientation="horizontal"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/txtView_score">
@@ -40,8 +59,9 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:text="A"
             android:gravity="center"
+            android:text="A"
+            android:textColor="#B4F5F0"
             android:textSize="46sp"
             android:textStyle="bold" />
 
@@ -50,8 +70,9 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:text="+"
             android:gravity="center"
+            android:text="+"
+            android:textColor="#B4F5F0"
             android:textSize="46sp"
             android:textStyle="bold" />
 
@@ -60,8 +81,9 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:text="B"
             android:gravity="center"
+            android:text="B"
+            android:textColor="#B4F5F0"
             android:textSize="46sp"
             android:textStyle="bold" />
 
@@ -70,8 +92,9 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:text="="
             android:gravity="center"
+            android:text="="
+            android:textColor="#B4F5F0"
             android:textSize="46sp"
             android:textStyle="bold" />
 
@@ -80,8 +103,9 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:text="C"
             android:gravity="center"
+            android:text="C"
+            android:textColor="#B4F5F0"
             android:textSize="46sp"
             android:textStyle="bold" />
 
@@ -92,9 +116,8 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginLeft="15dp"
-        android:layout_marginTop="50dp"
+        android:layout_marginTop="40dp"
         android:layout_marginRight="15dp"
-        android:background="#ffffff"
         android:shrinkColumns="*"
         android:stretchColumns="*"
         app:layout_constraintLeft_toLeftOf="parent"
@@ -109,21 +132,31 @@
                 android:id="@+id/btn1"
                 android:layout_width="@dimen/btnsize"
                 android:layout_height="@dimen/btnsize"
+                android:layout_marginRight="20dp"
+                android:background="@drawable/rounded_button"
                 android:text="1"
+                android:textColor="#F8F8FF"
                 android:textSize="@dimen/btntextsize" />
 
             <Button
                 android:id="@+id/btn2"
                 android:layout_width="@dimen/btnsize"
                 android:layout_height="@dimen/btnsize"
+                android:layout_marginRight="20dp"
+                android:background="@drawable/rounded_button"
                 android:text="2"
+                android:textColor="#F8F8FF"
                 android:textSize="@dimen/btntextsize" />
 
             <Button
                 android:id="@+id/btn3"
                 android:layout_width="@dimen/btnsize"
                 android:layout_height="@dimen/btnsize"
+                android:layout_marginRight="20dp"
+                android:layout_marginBottom="10dp"
+                android:background="@drawable/rounded_button"
                 android:text="3"
+                android:textColor="#F8F8FF"
                 android:textSize="@dimen/btntextsize" />
         </TableRow>
 
@@ -135,21 +168,31 @@
                 android:id="@+id/btn4"
                 android:layout_width="@dimen/btnsize"
                 android:layout_height="@dimen/btnsize"
+                android:layout_marginRight="20dp"
+                android:background="@drawable/rounded_button"
                 android:text="4"
+                android:textColor="#F8F8FF"
                 android:textSize="@dimen/btntextsize" />
 
             <Button
                 android:id="@+id/btn5"
                 android:layout_width="@dimen/btnsize"
                 android:layout_height="@dimen/btnsize"
+                android:layout_marginRight="20dp"
+                android:background="@drawable/rounded_button"
                 android:text="5"
+                android:textColor="#F8F8FF"
                 android:textSize="@dimen/btntextsize" />
 
             <Button
                 android:id="@+id/btn6"
                 android:layout_width="@dimen/btnsize"
                 android:layout_height="@dimen/btnsize"
+                android:layout_marginRight="20dp"
+                android:layout_marginBottom="10dp"
+                android:background="@drawable/rounded_button"
                 android:text="6"
+                android:textColor="#F8F8FF"
                 android:textSize="@dimen/btntextsize" />
         </TableRow>
 
@@ -161,21 +204,31 @@
                 android:id="@+id/btn7"
                 android:layout_width="@dimen/btnsize"
                 android:layout_height="@dimen/btnsize"
+                android:layout_marginRight="20dp"
+                android:background="@drawable/rounded_button"
                 android:text="7"
+                android:textColor="#F8F8FF"
                 android:textSize="@dimen/btntextsize" />
 
             <Button
                 android:id="@+id/btn8"
                 android:layout_width="@dimen/btnsize"
                 android:layout_height="@dimen/btnsize"
+                android:layout_marginRight="20dp"
+                android:background="@drawable/rounded_button"
                 android:text="8"
+                android:textColor="#F8F8FF"
                 android:textSize="@dimen/btntextsize" />
 
             <Button
                 android:id="@+id/btn9"
                 android:layout_width="@dimen/btnsize"
                 android:layout_height="@dimen/btnsize"
+                android:layout_marginRight="20dp"
+                android:layout_marginBottom="10dp"
+                android:background="@drawable/rounded_button"
                 android:text="9"
+                android:textColor="#F8F8FF"
                 android:textSize="@dimen/btntextsize" />
         </TableRow>
 
@@ -187,21 +240,31 @@
                 android:id="@+id/btnPasse"
                 android:layout_width="@dimen/btnsize"
                 android:layout_height="@dimen/btnsize"
+                android:layout_marginRight="20dp"
+                android:background="@drawable/rounded_button_special"
                 android:text="Pass"
+                android:textColor="#0476D0"
                 android:textSize="@dimen/btntextsize" />
 
             <Button
                 android:id="@+id/btn0"
                 android:layout_width="@dimen/btnsize"
                 android:layout_height="@dimen/btnsize"
+                android:layout_marginRight="20dp"
+                android:background="@drawable/rounded_button"
                 android:text="0"
+                android:textColor="#B4F5F0"
                 android:textSize="@dimen/btntextsize" />
 
             <Button
                 android:id="@+id/btnClear"
                 android:layout_width="@dimen/btnsize"
                 android:layout_height="@dimen/btnsize"
+                android:layout_marginRight="20dp"
+                android:layout_marginBottom="20dp"
+                android:background="@drawable/rounded_button_special"
                 android:text="C"
+                android:textColor="#0476D0"
                 android:textSize="@dimen/btntextsize" />
         </TableRow>
     </TableLayout>
